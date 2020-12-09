@@ -1,4 +1,5 @@
 # travel_log
+
 travel_log = [
 {
   "country": "France",
@@ -15,9 +16,12 @@ travel_log = [
 #First *fork* your copy. Then copy-paste your code below this line 👇
 #Finally click "Run" to execute the tests
 
-
-
-
+def add_new_country(country_visit, times_visited, cities_visited):
+  new_country = {}
+  new_country["country"] = country_visit
+  new_country["visits"] = times_visited
+  new_country["cities"] = cities_visited
+  travel_log.append(new_country)
 
 
 #🚨 Do NOT change the code below
