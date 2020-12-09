@@ -1,16 +1,57 @@
-# This is a sample Python script.
+travel_log = [
+{
+  "country": "France",
+  "visits": 12,
+  "cities": ["Paris", "Lille", "Dijon"]
+},
+{
+  "country": "Germany",
+  "visits": 5,
+  "cities": ["Berlin", "Hamburg", "Stuttgart"]
+},
+]
+#🚨 Do NOT change the code above
+#First *fork* your copy. Then copy-paste your code below this line 👇
+#Finally click "Run" to execute the tests
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+#🚨 Do NOT change the code below
+add_new_country("Russia", 2, ["Moscow", "Saint Petersburg"])
+print(travel_log)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Tests
+import unittest
+from unittest.mock import patch
+from io import StringIO
+
+class MyTest(unittest.TestCase):
+    def test_1(self):
+        with patch('sys.stdout', new = StringIO()) as fake_out:
+          print(travel_log)
+          expected_print = "[{'country': 'France', 'visits': 12, 'cities': ['Paris', 'Lille', 'Dijon']}, {'country': 'Germany', 'visits': 5, 'cities': ['Berlin', 'Hamburg', 'Stuttgart']}, {'country': 'Russia', 'visits': 2, 'cities': ['Moscow', 'Saint Petersburg']}]\n"
+          self.assertEqual(fake_out.getvalue(), expected_print)
+
+
+
+print("\n")
+print('Running some tests on your code:')
+print(".\n.\n.\n.")
+unittest.main(verbosity=1, exit=False)
